@@ -41,7 +41,7 @@ class ForcastExtended extends Component {
             this.setState({forcastData:null,})
             this.updateCity(netxProps.city);
         }
-    }
+    } 
     updateCity = city =>{
         const url_forecast = `${url}?q=${this.props.city}&appid=${api_key}`;
         fetch(url_forecast).then(
