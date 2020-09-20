@@ -8,6 +8,10 @@
         max-height: 40vh;
         margin-bottom: 20px;
     }
+    .ForcasEXT{
+        margin-left: 200px;
+        
+    }
 }
 .forecast-Title{
     color:white;
@@ -15,4 +19,9 @@
     padding-top: 15px;
     padding-bottom: 15px;
 
+}
+
+.ForcasEXT{
+
+    margin-left: 100px;
 }
