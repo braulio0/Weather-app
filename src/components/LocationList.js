@@ -1,26 +1,33 @@
 import React from "react";
+import WeatherLocation from "./WeatherLocation";
 import PropTypes from "prop-types";
-import WeatherLocation from "./WeatherLocation/index";
-import "./style.css";
+import "./styles.css";
 
 const LocationList = ({ cities, onSelectedLocation }) => {
-  const handleWeatherLocationClick = (city) => {
-    console.log("handleWeatherLocationClick");
+  const hanlWeatherLocationClic = (city) => {
+    console.log("hanlWeatherLocationClic");
     onSelectedLocation(city);
   };
   const strToComponents = (cities) =>
     cities.map((city) => (
       <WeatherLocation
+        //Provee de una clave para la ciudad
         key={city.key}
+        //Provee el nombre de la ciudad
         city={city.name}
-        onWeatherLocationClick={() => handleWeatherLocationClick(city)}
+        //Boton de click se refresca con city.name
+        onWeatherLocationClick={() => hanlWeatherLocationClic(city.name)}
+        //Proveer al componente WeatherLocation de la data:
         data={city.data}
       />
     ));
+
   return <div className="locationList">{strToComponents(cities)}</div>;
 };
-LocationList.protoType = {
+
+LocationList.propTypes = {
   cities: PropTypes.array.isRequired,
   onSelectedLocation: PropTypes.func,
 };
+
 export default LocationList;
